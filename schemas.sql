@@ -44,3 +44,15 @@ CREATE TABLE bookings (
     CONSTRAINT bookings_user_id_fkey FOREIGN KEY (user_id) REFERENCES users(user_id),
     CONSTRAINT bookings_house_id_fkey FOREIGN KEY (house_id) REFERENCES houses(house_id) ON DELETE CASCADE
 );
+
+-- Create table 4 (reviews)
+CREATE TABLE reviews (
+    review_id int4 SERIAL PRIMARY KEY NOT NULL,
+    reviewer_id int4 NOT NULL,
+    house_id int4 NOT NULL,
+    review_text text,
+    star_rating float8 NOT NULL,
+    review_date date NOT NULL,
+    CONSTRAINT reviews_reviewer_id_fkey FOREIGN KEY (reviewer_id) REFERENCES users(user_id),
+    CONSTRAINT reviews_house_id_fkey FOREIGN KEY (house_id) REFERENCES houses(house_id) ON DELETE CASCADE
+);
