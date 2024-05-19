@@ -16,3 +16,7 @@ UPDATE users
     SET profile_pic_url = 'https://randomuser.me/api/portraits/men/89.jpg', first_name = 'Jonny'
     WHERE user_id = 1
 ;
+-- Read Profile
+SELECT * FROM users
+WHERE user_id = 1
+;
