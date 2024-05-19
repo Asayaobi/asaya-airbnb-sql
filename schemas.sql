@@ -19,6 +19,14 @@ CREATE TABLE houses (
     host_id int4,
     reviews_count int4,
     rating int2,
-    CONSTRAINT "houses_host_id_fkey" FOREIGN KEY ("host_id") REFERENCES "public"."users"("user_id"),
-    PRIMARY KEY ("house_id")
+    CONSTRAINT houses_host_id_fkey FOREIGN KEY (host_id) REFERENCES users(user_id)
+);
+
+-- Create table 2b (pictures)
+
+CREATE TABLE pictures (
+    picture_id SERIAL PRIMARY KEY NOT NULL,
+    pic_url varchar NOT NULL,
+    house_id int4 NOT NULL,
+    CONSTRAINT pictures_house_id_fkey FOREIGN KEY (house_id) REFERENCES houses(house_id) ON DELETE CASCADE
 );
