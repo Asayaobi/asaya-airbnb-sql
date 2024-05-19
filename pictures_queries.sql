@@ -9,3 +9,7 @@ VALUES
 UPDATE pictures
 SET picture_url = 'https://cdn.pixabay.com/photo/2016/06/24/10/47/house-1477041_1280.jpg'
 WHERE picture_id = 2
+
+-- Delete Pictures
+DELETE FROM pictures
+WHERE picture_id = 3
