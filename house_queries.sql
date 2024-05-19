@@ -9,3 +9,9 @@ VALUES
 -- Read House
 SELECT * FROM houses
 ;
+
+-- Update House
+UPDATE houses
+SET location = 'Phangan', bedrooms = 3, bathrooms = 2, price per night = 100, description = 'amazing'
+WHERE house_id = 1
+;
