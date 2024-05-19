@@ -18,3 +18,9 @@ FULL JOIN pictures
 ON bookings.house_id = pictures.house_id
 WHERE user_id = 1
 ;
+
+-- Retrieves count of reviews for a given house (for speech bubble icon)
+SELECT COUNT(*)
+FROM reviews
+WHERE reviews.house_id = 2 
+;
