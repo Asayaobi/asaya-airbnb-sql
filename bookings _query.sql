@@ -24,3 +24,9 @@ SELECT COUNT(*)
 FROM reviews
 WHERE reviews.house_id = 2 
 ;
+
+-- Retrieves all pictures for a given house (for display on the bookings page)
+SELECT *
+FROM pictures
+WHERE pictures.house_id = 2
+;
