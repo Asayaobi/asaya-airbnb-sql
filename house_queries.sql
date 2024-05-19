@@ -5,3 +5,7 @@ INSERT INTO
 VALUES
         ('Phuket, Thailand', 1, 1, 100, 'Beautiful villa with private pool')
 ;
+
+-- Read House
+SELECT * FROM houses
+;
