@@ -23,10 +23,24 @@ CREATE TABLE houses (
 );
 
 -- Create table 2b (pictures)
-
 CREATE TABLE pictures (
     picture_id SERIAL PRIMARY KEY NOT NULL,
     pic_url varchar NOT NULL,
     house_id int4 NOT NULL,
     CONSTRAINT pictures_house_id_fkey FOREIGN KEY (house_id) REFERENCES houses(house_id) ON DELETE CASCADE
+);
+
+-- Create table 3 (bookings)
+CREATE TABLE bookings (
+    booking_id SERIAL PRIMARY KEY NOT NULL,
+    user_id int4,
+    house_id int4,
+    booking_start_date date NOT NULL,
+    booking_end_date date NOT NULL,
+    price float8 NOT NULL,
+    message_to_host text,
+    nights int4,
+    price_per_night int4,
+    CONSTRAINT bookings_user_id_fkey FOREIGN KEY (user_id) REFERENCES users(user_id),
+    CONSTRAINT bookings_house_id_fkey FOREIGN KEY (house_id) REFERENCES houses(house_id) ON DELETE CASCADE
 );
