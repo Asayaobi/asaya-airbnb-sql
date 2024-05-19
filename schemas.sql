@@ -7,3 +7,18 @@ CREATE TABLE users(
     password VARCHAR(50) NOT NULL,
     profile_pic_url VARCHAR(256)
 );
+
+-- Create table 2 (houses)
+CREATE TABLE houses (
+    user_id SERIAL PRIMARY KEY NOT NULL,
+    location varchar(256) NOT NULL,
+    bedrooms int4 NOT NULL,
+    bathrooms int4 NOT NULL,
+    description text NOT NULL,
+    price_per_night float8 NOT NULL,
+    host_id int4,
+    reviews_count int4,
+    rating int2,
+    CONSTRAINT "houses_host_id_fkey" FOREIGN KEY ("host_id") REFERENCES "public"."users"("user_id"),
+    PRIMARY KEY ("house_id")
+);
